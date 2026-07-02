@@ -1,0 +1,163 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Document</title>
+</head>
+
+<body>
+  <h2>Sports Physical Form</h2>
+
+  <form action="actionpage.html" method="get">
+    <fieldset>
+      <legend>
+        <h4>Athlete Information</h4>
+      </legend>
+
+      <ul>
+        <li>
+          <label for="name"><strong>Name:</strong></label>
+          <input type="text" name="username" id="name" />
+        </li>
+        <li>
+          <label for="school_name"><strong>School/Team:</strong></label>
+          <input type="text" name="school" id="school_name" />
+        </li>
+        <li>
+          <label for="sport_name"><strong>Sport:</strong></label>
+          <input type="text" name="sport" id="sport_name" />
+        </li>
+        <li>
+          <label for="parent_guardian_name"><strong>Parent/Guardian Name:</strong></label>
+          <input type="text" name="parent" id="parent_guardian_name" />
+        </li>
+        <li>
+          <label for="number"><strong>Contact Number:</strong></label>
+          <input type="number" name="number" id="number" />
+        </li>
+      </ul>
+    </fieldset>
+    <fieldset>
+      <legend>
+        <h4>Medical History for Athlete</h4>
+      </legend>
+
+      <ul>
+        <li>
+          <label for="History_concussions"><strong>History of concussions:</strong></label>
+          <input type="radio" name="History_concussions" id="History_concussions_yes" value="History_concussions_yes" />
+          <label for="History_concussions_yes"><strong>Yes</strong></label>
+          <input type="radio" name="History_concussions" id="History_concussions_no" value="History_concussions_no" />
+          <label for="History_concussions_no"><strong>No</strong></label>
+        </li>
+        <li>
+          <label for="previous_surgeries"><strong>Previous Surgeries:</strong></label>
+          <input type="text" name="previous_surgeries" id="previous_surgeries" />
+        </li>
+        <li>
+          <label for="Any_bone_fractures"><strong>Any bone fractures?</strong></label>
+          <input type="radio" name="Any_bone_fractures" id="Any_bone_fractures_yes" value="Any_bone_fractures_yes" />
+          <label for="Any_bone_fractures_yes"><strong>Yes</strong></label>
+          <input type="radio" name="Any_bone_fractures" id="Any_bone_fractures_no" value="Any_bone_fractures_no" />
+          <label for="Any_bone_fractures_no"><strong>No</strong></label>
+        </li>
+        <li>
+          <label for="Asthma_or_breathing_problem"><strong>Asthma or breathing problem:</strong></label>
+          <input type="radio" name="Asthma_or_breathing_problem" id="Asthma_or_breathing_problem_yes"
+            value="Asthma_or_breathing_problem_yes" />
+          <label for="Asthma_or_breathing_problem_yes"><strong>Yes</strong></label>
+          <input type="radio" name="Asthma_or_breathing_problem" id="Asthma_or_breathing_problem_no"
+            value="Asthma_or_breathing_problem_no" />
+          <label for="Asthma_or_breathing_problem_no"><strong>No</strong></label>
+        </li>
+      </ul>
+    </fieldset>
+
+    <fieldset>
+      <legend><strong>Select Your Department</strong></legend>
+      <select name="department_name" id="department">
+        <option value="Null">Select your Department</option>
+        <option value="AIDS">AIDS</option>
+        <option value="AIML">AIML</option>
+        <option value="CSE">CSE</option>
+      </select>
+    </fieldset>
+
+    <fieldset>
+      <legend><strong>Select your Gender</strong></legend>
+      <input type="radio" id="male" name="gender" value="gender_male">
+      <label for="male">Male</label>
+      <input type="radio" id="female" name="gender" value="gender_female">
+      <label for="female">Female</label>
+    </fieldset>
+
+    <fieldset>
+      <legend><strong>Select your Hobbies</strong></legend>
+      <label for="football">Football</label>
+      <input type="checkbox" name="hobbies_1" id="football" value="football">
+      <label for="badminton">Badminton</label>
+      <input type="checkbox" name="hobbies_2" id="badminton" value="badminton">
+    </fieldset>
+
+    <fieldset>
+      <legend>
+        <h4>Doctor's Recommendation for sports Partition</h4>
+      </legend>
+    </fieldset>
+
+    <fieldset>
+      <legend><strong>Information</strong></legend>
+      <label for="Text">Address:</label>
+
+      <textarea id="Text" name="Text" rows="5" cols="30" placeholder="Enter your text here..."></textarea><br><br>
+
+
+      <label for="email">Email:</label>
+      <input type="email" id="email" name="email" placeholder="Enter your email"><br><br>
+
+      <label for="password">Password:</label>
+      <input type="password" id="password" name="password" placeholder="Enter your password"><br><br>
+
+      <label for="age">Age:</label>
+      <input type="number" id="age" name="age" min="1" max="100"><br><br>
+
+      <label for="dob">Date of Birth:</label>
+      <input type="date" id="dob" name="dob"><br><br>
+
+      <label for="time">Preferred Time:</label>
+      <input type="time" id="time" name="time"><br><br>
+
+      <label for="meeting">Meeting Date & Time:</label>
+      <input type="datetime-local" id="meeting" name="meeting"><br><br>
+
+      <label for="message">Message:</label>
+      <textarea id="message" name="message" rows="5" cols="30" placeholder="Enter your message"></textarea><br><br>
+    </fieldset>
+
+    <fieldset>
+      <legend><strong>File</strong></legend>
+      <label for="file">Choose a file:</label>
+      <input type="file" id="file" name="file"><br><br>
+
+      <label for="profile_image">Choose a Profile Image:</label>
+      <input type="file" id="profile_image" name="profile_image" accept=".jpg,.jpeg,.png"><br><br>
+
+      <label for="Resume">Choose a Resume:</label>
+      <input type="file" id="Resume" name="Resume" accept=".pdf"><br><br>
+
+      <label for="word_file">Choose a Word File:</label>
+      <input type="file" id="word_file" name="word_file" accept=".docx"><br><br>
+
+      <label for="excel_file">Choose a Excel File:</label>
+      <input type="file" id="excel_file" name="excel_file" accept=".xlxs"><br><br>
+
+
+    </fieldset>
+
+    <button type="submit">Form Submit</button>
+  </form>
+</body>
+
+</html>
