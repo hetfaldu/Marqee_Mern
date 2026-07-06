@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Intro to CSS</title>
+    <style>
+        #heading{
+            color: brown;
+        }
+
+        .formatting{
+            background-color: azure;
+            font-family: cursive;
+        }
+
+        ul {
+            color: black;
+            background-color: azure;
+        }
+
+        div > p{
+            color: red;
+        }
+
+        input[type= "text"] {
+            background-color: pink;
+        }
+        input[type= "number"] {
+            background-color: yellow;
+        }
+
+        a:hover { 
+            color: red;
+            text-decoration: none;
+            font-family:Arial, Helvetica, sans-serif;
+            font-weight: 900;
+        }
+
+    </style>
+</head>
+<body>
+    <h3 id="heading">Types of CSS :</h3>
+    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Facere?</p>
+    <ul style="background-color: bisque;">
+        <li class="formatting">Inline CSS</li>
+        <li class="formatting">Internal CSS</li>
+        <li class="formatting">External CSS</li>
+    </ul>
+    <a href="#" class="formatting">Click Here</a>
+
+    <section>
+        <div>
+            <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Iusto, sunt.</p>
+        </div>
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Aliquid eaque quia hic. Ducimus.</p>
+    </section>
+    <form action="">
+        <label for="name">Username: </label>
+        <input type="text" name="name" placeholder="Enter your name"><br>
+        <label for="Password">Password: </label>
+        <input type="number" name="Password" placeholder="Enter your password">
+        <button>Submit</button>
+    </form>
+</body>
+</html>
