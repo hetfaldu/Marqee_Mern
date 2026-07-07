@@ -1,0 +1,26 @@
+h2{
+    background-color: rgb(207, 126, 140);
+    border: 3px solid;
+    padding: 25px;
+}
+
+p{
+    background-color: lightblue;
+    border: 4px solid;
+    padding: 10px;
+}
+
+ul {
+    color: rgb(207, 126, 140);
+}
+
+li:nth-child(1), li:nth-child(3){
+    color: rgb(207, 126, 140);
+    background-color: yellow;
+}
+
+span{
+    border: 3px solid;
+    background: white;
+    padding: 10px 1px ;
+}
