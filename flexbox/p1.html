@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css"
+        integrity="sha512-2SwdPD6INVrV/lHTZbO2nodKhrnDdJK9/kg2XD1r9uGqPo1cUbujc+IYdlYdEErWNu69gVcYgdxlmVmzTWnetw=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <title>Document</title>
+    <style>
+        .container {
+            border: 1px solid #000;
+            width: 80vw;
+            height: auto;
+            display: flex;
+            justify-content: space-evenly;
+            align-items: flex-start;
+            margin: 0 auto;
+        }
+
+        .card {
+            margin: 20px;
+        }
+
+        .card:nth-child(2) {
+            margin-left: auto;
+        }
+
+        .card:last-child {
+            margin-left: auto;
+        }
+
+        .card img {
+            width: 100%;
+            height: 180px;
+            object-fit: cover;
+            display: block;
+        }
+
+        .card h3 {
+            margin: 20px 0 15px;
+            font-size: 25px;
+        }
+
+        .card p {
+            max-width: 100%;
+            font-size: 17px;
+            line-height: 1.4;
+            color: #555;
+        }
+
+        .container-2 {
+            width: 80%;
+            height: auto;
+            justify-content: center;
+            text-align: center;
+            gap: 40px;
+            margin: 0 auto;
+            justify-content: center;
+            padding: 2rem;
+
+        }
+
+        .short_line {
+            background-color: tomato;
+            width: 60px;
+            height: 4px;
+            margin: 0 auto;
+        }
+
+        .flex-container {
+            width: 95%;
+            height: auto;
+            align-items: center;
+            gap: 20px;
+            display: flex;
+            justify-content: center;
+            margin: 0 auto;
+        }
+
+        .flex-item {
+            flex: 1;
+            height: auto;
+            text-align: center;
+            margin: 50px auto;
+            padding: 1rem;
+        }
+
+        .flex-item> i {
+            font-size: 3rem;
+            color: grey;
+        }
+
+        .flex-item> h2 {
+            color: tomato;
+            font-size: 40px;
+            margin: 0;
+        }
+
+        .flex-item> p {
+            font-size: 20px;
+            line-height: 1.2;
+            margin: 40px 0 0 0;
+        }
+
+        .line {
+            width: 1px;
+            height: 200px;
+            background: #999;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <div class="card">
+            <div><img src="kitchen.jpg" alt="kitchen">
+                <h3>Kitchen Remodels</h3>
+                <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Incidunt rerum distinctio.adipisicing elit.
+                    Incidunt rerum.adipisicing elit. Incidunt rerum distinctio.</p>
+            </div>
+        </div>
+        <div class="card">
+            <div><img src="window.jpg" alt="window">
+                <h3>Windows</h3>
+                <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Incidunt rerum distinctio.adipisicing elit.
+                    Incidunt rerum.adipisicing elit. Incidunt rerum distinctio.</p>
+            </div>
+        </div>
+        <div class="card">
+            <div><img src="deck.jpg" alt="deck">
+                <h3>Decks & Porches</h3>
+                <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Incidunt rerum distinctio.adipisicing elit.
+                    Incidunt rerum.adipisicing elit. Incidunt rerum distinctio.</p>
+            </div>
+        </div>
+
+    </div>
+    <div class="container-2">
+        <h1 style="color: rgb(66, 122, 185);">Why Choose Us</h1>
+        <div class="short_line"></div>
+
+        <div class="flex-container">
+            <div class="flex-item">
+                <i class="fa-solid fa-location-dot fa-2xl"></i>
+                <p style="color: tomato;"><strong>We have</strong></p>
+                <h2>2</h2>
+                <p style="margin-top: 0;">Central locations in London and Dublin</p>
+            </div>
+
+            <div class="line"></div>
+
+            <div class="flex-item">
+                <i class="fa-regular fa-comments fa-2xl"></i>
+                <p style="color: tomato;"><strong>Over</strong></p>
+                <h2>95%</h2>
+                <p style="margin-top: 0;">Of students would recommend us to a friend</p>
+            </div>
+
+
+            <div class="line"></div>
+
+            <div class="flex-item">
+                <i class="fa-solid fa-award fa-2xl"></i>
+                <p style="color: tomato;"><strong>We are</strong></p>
+                <h2>100%</h2>
+                <p style="margin-top: 0;">Accredated by the British Council and ACELS</p>
+            </div>
+
+            <div class="line"></div>
+
+            <div class="flex-item">
+                <i class="fa-regular fa-thumbs-up fa-2xl"></i>
+                <p style="color: tomato;"><strong>We have a</strong></p>
+                <h2>95%</h2>
+                <p style="margin-top: 0;">Exam Pass Rate for our students</p>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>
