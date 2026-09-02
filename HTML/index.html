@@ -3,11 +3,362 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>hello km cho!!</title>
+    <title>AI Mode Button Showcase</title>
+    <style>
+        /* Base Page Styling */
+        body {
+            background-color: #050505;
+            color: #ffffff;
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            min-height: 100vh;
+            margin: 0;
+            gap: 50px;
+        }
+
+        .container {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 40px;
+            justify-content: center;
+            align-items: center;
+            padding: 20px;
+        }
+
+        .section {
+            text-align: center;
+        }
+
+        h3 {
+            color: #888;
+            font-size: 12px;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            margin-bottom: 20px;
+        }
+
+        /* -------------------------------------------
+           STYLE 1: THE PULSE & GLOW (CTA)
+           ------------------------------------------- */
+        .ai-btn-pulse {
+            position: relative;
+            padding: 15px 35px;
+            background: #0a0a0a;
+            color: #fff;
+            font-weight: 600;
+            border: 1px solid #4f46e5;
+            border-radius: 50px;
+            cursor: pointer;
+            overflow: hidden;
+            transition: all 0.3s ease;
+            box-shadow: 0 0 15px rgba(79, 70, 229, 0.4);
+            font-size: 16px;
+        }
+
+        .ai-btn-pulse:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 0 30px rgba(79, 70, 229, 0.8);
+            border-color: #818cf8;
+        }
+
+        .ai-btn-pulse::after {
+            content: '';
+            position: absolute;
+            top: -2px; left: -2px; right: -2px; bottom: -2px;
+            border-radius: 50px;
+            background: linear-gradient(45deg, #4f46e5, #06b6d4, #4f46e5);
+            z-index: -1;
+            animation: pulse 2s infinite;
+            opacity: 0.5;
+        }
+
+        @keyframes pulse {
+            0% { transform: scale(1); opacity: 0.5; }
+            50% { transform: scale(1.08); opacity: 0.1; }
+            100% { transform: scale(1); opacity: 0.5; }
+        }
+
+        /* -------------------------------------------
+           STYLE 2: HOLOGRAPHIC BORDER TOGGLE
+           ------------------------------------------- */
+        .ai-toggle {
+            position: relative;
+            display: inline-block;
+            width: 240px;
+            height: 54px;
+        }
+
+        .ai-toggle input { display: none; }
+
+        .slider {
+            position: absolute;
+            cursor: pointer;
+            top: 0; left: 0; right: 0; bottom: 0;
+            background-color: #fff;
+            border: 2px solid #333;
+            border-radius: 34px;
+            transition: .4s;
+            display: flex;
+            align-items: center;
+            justify-content: space-around;
+            color: #555;
+            font-weight: bold;
+            font-size: 14px;
+        }
+
+        .slider:before {
+            position: absolute;
+            content: "";
+            height: 42px;
+            width: 112px;
+            left: 6px;
+            bottom: 4px;
+            background: #222;
+            border-radius: 30px;
+            transition: .4s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+            z-index: 0;
+        }
+
+        input:checked + .slider {
+            border-color: #06b6d4;
+            box-shadow: 0 0 20px rgba(6, 182, 212, 0.2);
+        }
+
+        input:checked + .slider:before {
+            transform: translateX(115px);
+            background: linear-gradient(90deg, #4f46e5, #06b6d4);
+            box-shadow: 0 0 15px rgba(79, 70, 229, 0.6);
+        }
+
+        .label-off, .label-on { position: relative; z-index: 1; transition: 0.3s; }
+        input:checked + .slider .label-on { color: white; }
+        input:not(:checked) + .slider .label-off { color: white; }
+
+        /* -------------------------------------------
+           STYLE 3: NEURAL FLASH (GRADIENT BORDER)
+           ------------------------------------------- */
+        .neural-btn {
+            background: #000;
+            color: #fff;
+            padding: 16px 30px;
+            font-size: 13px;
+            font-weight: 700;
+            letter-spacing: 3px;
+            border: none;
+            border-radius: 8px;
+            position: relative;
+            cursor: pointer;
+            background: linear-gradient(90deg, #000, #151515, #000);
+            background-size: 200% 100%;
+            animation: shine 3s linear infinite;
+            text-transform: uppercase;
+        }
+
+        .neural-btn::before {
+            content: '';
+            position: absolute;
+            inset: 0;
+            border-radius: 8px;
+            padding: 2px; /* Border thickness */
+            background: linear-gradient(90deg, #ff00cc, #333, #00ffcc, #333, #ff00cc);
+            background-size: 400% 100%;
+            animation: borderRotate 4s linear infinite;
+            -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+            mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+            -webkit-mask-composite: xor;
+            mask-composite: exclude;
+        }
+
+        @keyframes shine {
+            to { background-position: -200% center; }
+        }
+
+        @keyframes borderRotate {
+            100% { background-position: 400% center; }
+        }
+
+        .neural-btn:active {
+            transform: scale(0.96);
+        }
+    </style>
 </head>
 <body>
-    <h3>Hello this from feature branch</h3>
-    <button style="background-color: rgb(226, 43, 43); ">Click</button>
-    <p>Kem cho</p>
+
+    <div class="container">
+        
+        <!-- Style 1 -->
+        <div class="section">
+            <h3>Pulse & Glow</h3>
+            <button class="ai-btn-pulse">
+                Activate AI Mode
+            </button>
+        </div>
+
+        <!-- Style 2 -->
+        <div class="section">
+            <h3>Holographic Toggle</h3>
+            <label class="ai-toggle">
+                <input type="checkbox">
+                <span class="slider">
+                    <span class="label-off">Standard</span>
+                    <span class="label-on">AI Mode</span>
+                </span>
+            </label>
+        </div>
+
+        <!-- Style 3 -->
+        <div class="section">
+            <h3>Neural Flash</h3>
+            <button class="neural-btn">
+                Generate with AI
+            </button>
+        </div>
+
+    </div>
+
+</body>
+</html>
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dynamic AI Button</title>
+    <style>
+        :root {
+            /* Default Palette (Google Style) */
+            --c1: #4285f4;
+            --c2: #ea4335;
+            --c3: #fbbc05;
+            --c4: #34a853;
+        }
+
+        body {
+            background-color: #f0f3f5;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            font-family: 'Segoe UI', system-ui, sans-serif;
+        }
+
+        .ai-wrapper {
+            position: relative;
+            display: inline-block;
+        }
+
+        /* Simple White Button */
+        .ai-button {
+            position: relative;
+            z-index: 2;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            padding: 12px 28px;
+            background-color: #ffffff;
+            border: none;
+            border-radius: 100px;
+            font-size: 17px;
+            font-weight: 500;
+            color: #1f1f1f;
+            cursor: pointer;
+            outline: none;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.06);
+            transition: transform 0.2s ease;
+        }
+
+        /* Outside Glow Layer */
+        .ai-glow {
+            position: absolute;
+            top: 0; left: 0; right: 0; bottom: 0;
+            z-index: 1;
+            border-radius: 100px;
+            
+            /* Uses the variables that JS will change */
+            background: conic-gradient(
+                from 180deg at 50% 50%,
+                var(--c1) 0deg,
+                var(--c2) 90deg,
+                var(--c3) 180deg,
+                var(--c4) 270deg,
+                var(--c1) 360deg
+            );
+            
+            filter: blur(15px);
+            opacity: 0;
+            /* Added a slight transition to colors so they "morph" */
+            transition: opacity 0.4s ease, filter 0.4s ease, background 0.5s ease;
+            pointer-events: none;
+        }
+
+        /* Hover Effect */
+        .ai-wrapper:hover .ai-glow {
+            opacity: 0.8;
+            filter: blur(20px);
+        }
+
+        .ai-wrapper:hover .ai-button {
+            transform: scale(1.02);
+        }
+
+        .ai-icon svg {
+            width: 20px;
+            height: 20px;
+            fill: #444;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="ai-wrapper" id="aiWrapper">
+        <div class="ai-glow" id="glowLayer"></div>
+        <button class="ai-button">
+            <div class="ai-icon">
+                <svg viewBox="0 0 24 24">
+                    <path d="M15.5 14h-.79l-.28-.27C15.41 12.59 16 11.11 16 9.5 16 5.91 13.09 3 9.5 3S3 5.91 3 9.5 5.91 16 9.5 16c1.61 0 3.09-.59 4.23-1.57l.27.28v.79l5 4.99L20.49 19l-4.99-5zm-6 0C7.01 14 5 11.99 5 9.5S7.01 5 9.5 5 14 7.01 14 9.5 11.99 14 9.5 14z"/>
+                    <path d="M12 7l.62 1.38L14 9l-1.38.62L12 11l-.62-1.38L10 9l1.38-.62L12 7z" fill="var(--c1)"/>
+                </svg>
+            </div>
+            AI Mode
+        </button>
+    </div>
+
+    <script>
+        const wrapper = document.getElementById('aiWrapper');
+        
+        // List of different shade palettes
+        const palettes = [
+            { c1: '#4285f4', c2: '#ea4335', c3: '#fbbc05', c4: '#34a853' }, // Google Original
+            { c1: '#9b51e0', c2: '#3498db', c3: '#e74c3c', c4: '#f1c40f' }, // Deep Purple/Blue
+            { c1: '#00f2fe', c2: '#4facfe', c3: '#00f2fe', c4: '#4facfe' }, // Arctic Cyan
+            { c1: '#ff0080', c2: '#7928ca', c3: '#ff0080', c4: '#7928ca' }, // Cyber Pink/Purple
+            { c1: '#00b09b', c2: '#96c93d', c3: '#00b09b', c4: '#96c93d' }  // Fresh Mint/Green
+        ];
+
+        let lastIndex = -1;
+
+        wrapper.addEventListener('mouseenter', () => {
+            // Pick a random palette index that isn't the same as the last one
+            let newIndex;
+            do {
+                newIndex = Math.floor(Math.random() * palettes.length);
+            } while (newIndex === lastIndex);
+            
+            const p = palettes[newIndex];
+            lastIndex = newIndex;
+
+            // Update the CSS variables
+            document.documentElement.style.setProperty('--c1', p.c1);
+            document.documentElement.style.setProperty('--c2', p.c2);
+            document.documentElement.style.setProperty('--c3', p.c3);
+            document.documentElement.style.setProperty('--c4', p.c4);
+        });
+    </script>
+
 </body>
 </html>

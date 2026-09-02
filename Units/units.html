@@ -11,7 +11,7 @@
     <style>
         .container {
             width: 400px;
-            height: 500px;
+            height: 550px;
             margin: 0 auto;
             border-radius: 20px;
             border: 2px solid #000;
@@ -30,6 +30,41 @@
             width: 250px;
             height: 250px;
             margin: 5px 70px;
+            position: relative;
+        }
+
+        .icon {
+            position: absolute;
+            width: 30px;
+            height: 30px;
+            border-radius: 50%;
+            top: 27%;
+            left: 53%;
+            background-color: rgb(3, 85, 26);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            animation: icon 2s ease-in-out infinite;
+        }
+
+        @keyframes icon {
+            0% {
+                background-color: rgb(2, 142, 42);
+            }
+
+            50% {
+                background-color: rgb(2, 187, 55);
+            }
+
+            100% {
+                background-color: rgb(6, 239, 72);
+            }
+        }
+
+        .icon i {
+            display: flex;
+            align-items: center;
+            justify-content: center;
         }
 
         .info {
@@ -41,14 +76,30 @@
             font-family: Arial, Helvetica, sans-serif;
         }
 
+        .icons i {
+            transition: all 0.3s ease-in-out;
+            cursor: pointer;
+        }
 
-        button {
+        .icons i:hover {
+            transform: scale(1.2);
+        }
+
+        .btn {
             border-radius: 30px;
             background-color: rgb(10, 186, 245);
             border: none;
             color: white;
-            padding: 10px 35px;
+            padding: 10px 30px;
             font-size: 18px;
+            margin-top: 25px;
+            transition: all 0.3s ease-in-out;
+            cursor: pointer;
+        }
+
+        .btn:hover {
+            transform: translateY(-5px);
+            background-color: rgb(2, 187, 55);
         }
 
         .social {
@@ -71,6 +122,79 @@
             height: 30px;
             background: #999;
         }
+
+        .heart i {
+            color: rgb(192, 33, 33);
+            animation: heart 2s ease-in-out infinite;
+        }
+
+        @keyframes heart {
+            0% {
+                color: rgb(153, 3, 3);
+            }
+
+            50% {
+                color: rgb(204, 3, 3);
+            }
+
+            100% {
+                color: rgb(251, 7, 7);
+            }
+        }
+
+        .comment i {
+            color: rgb(60, 33, 192);
+            animation: comment 2s ease-in-out infinite;
+        }
+
+        @keyframes comment {
+            0% {
+                color: rgb(26, 3, 142);
+            }
+
+            50% {
+                color: rgb(36, 5, 190);
+            }
+
+            100% {
+                color: rgb(47, 6, 249);
+            }
+        }
+
+        .share i {
+            color: rgb(3, 85, 26);
+            animation: share 2s ease-in-out infinite;
+        }
+
+        @keyframes share {
+            0% {
+                color: rgb(2, 142, 42);
+            }
+
+            50% {
+                color: rgb(2, 187, 55);
+            }
+
+            100% {
+                color: rgb(6, 239, 72);
+            }
+        }
+
+        .loader {
+            width: 50px;
+            aspect-ratio: 1;
+            border-radius: 50%;
+            border: 8px solid lightblue;
+            border-right-color: orange;
+            animation: loading 1s infinite linear;
+        }
+
+        @keyframes loading {
+            to {
+                transform: rotate(1turn)
+            }
+        }
+       
     </style>
 </head>
 
@@ -78,6 +202,7 @@
     <div class="container">
         <div class="child">
             <img src="profile.png" alt="profile_image">
+            <div class="icon"><i class="fa-solid fa-check"></i></div>
         </div>
         <div class="info">
             <h2>CodingLab</h2>
@@ -89,32 +214,33 @@
                 <i class="fa-brands fa-square-youtube fa-2xl" style="color: rgb(244, 13, 40);"></i>
             </div>
 
-            <div style="margin-top: 25px;">
-                <button>Subscribe</button>
-                <button>Message</button>
+            <div>
+                <button class="btn">Subscribe</button>
+                <button class="btn">Message</button>
 
             </div>
             <div class="social">
-                <div class="item">
-                    <i class="fa-regular fa-heart"></i>
+                <div class="item heart">
+                    <i class="fa-solid fa-heart"></i>
                     <span>60.2k</span>
                 </div>
 
                 <div class="line"></div>
 
-                <div class="item">
-                    <i class="fa-regular fa-comment"></i>
+                <div class="item comment">
+                    <i class="fa-solid fa-comment"></i>
                     <span>10k</span>
                 </div>
 
                 <div class="line"></div>
 
-                <div class="item">
+                <div class="item share">
                     <i class="fa-solid fa-share"></i>
                     <span>5.5k</span>
                 </div>
             </div>
         </div>
+        <div class="loader"></div>
     </div>
 </body>
 

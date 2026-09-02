@@ -1,0 +1,100 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: gilroy, sans-serif;
+}
+
+html,
+body {
+  height: 100vh;
+  width: auto;
+}
+
+.ai_logo> img {
+  position: fixed;
+  right: 40px;
+  bottom: 40px;
+  width: 60px;
+  height: 60px;
+}
+
+.notification {
+  position: fixed;
+  right: 42px;
+  bottom: 80px;
+  height: 20px;
+  width: 20px;
+  background-color: tomato;
+  text-align: center;
+  border-radius: 50%;
+}
+
+.whatsapp> i{
+  position: fixed;
+  bottom: 65px;
+  left: 40px; 
+  font-size: 50px;
+}
+
+.notify {
+  position: fixed;
+  bottom: 72px;
+  left: 80px; 
+  height: 20px;
+  width: 20px;
+  background-color: tomato; 
+  border-radius: 50%;
+  text-align: center;
+}
+
+.heading {
+  margin-top: 20px;
+  text-align: center;
+}
+
+.container {
+  margin-top: 60px;
+  display: flex;
+  justify-content: space-evenly;
+}
+
+.card-container {
+  width: 280px;
+  height: auto;
+  background-color: white;
+  display: flex;
+  position: relative;
+  overflow: hidden;
+  box-shadow: 5px 5px 15px 5px #888888;
+  border-radius: 30px;
+}
+
+.content {
+  text-align: center;
+  margin: 30px 60px;
+}
+
+.quote {
+  position: absolute;
+  height: 100px;
+  width: 100px;
+  border-radius: 50%;
+  background-color: blue;
+  top: -40px;
+  right: -40px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.quote i {
+  color: white;
+  font-size: 28px;
+  margin-top: 30px;
+  margin-left: -30px;
+}
+
+.para {
+  margin: 30px;
+}

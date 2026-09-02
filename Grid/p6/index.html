@@ -1,0 +1,534 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin Dashboard</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght@300;400;500&display=swap"
+        rel="stylesheet">
+</head>
+
+<body>
+
+    <div class="app">
+        <aside class="sidebar">
+            <div class="brand">
+                <div>
+                    <div class="brand-title">Product</div>
+                    <div class="brand-sub">Admin Panel</div>
+                </div>
+                <span class="brand-close"><span class="material-symbols-outlined">
+                        close
+                    </span></span>
+            </div>
+            <ul class="nav">
+                <li class="nav-item active">
+                    <span class="material-symbols-outlined">
+                        view_cozy
+                    </span>Dashboard
+                </li>
+                <li class="nav-item">
+                    <span class="material-symbols-outlined">
+                        group
+                    </span>Users
+                </li>
+                <li class="nav-item">
+                    <span class="material-symbols-outlined">
+                        deployed_code
+                    </span>Products
+                </li>
+                <li class="nav-item">
+                    <span class="material-symbols-outlined">
+                        shopping_cart
+                    </span>Orders
+                </li>
+                <li class="nav-item">
+                    <span class="material-symbols-outlined">
+                        view_comfy_alt
+                    </span>Categories
+                </li>
+                <li class="nav-item">
+                    <span class="material-symbols-outlined">
+                        chat_bubble
+                    </span>Messages
+                </li>
+                <li class="nav-item">
+                    <span class="material-symbols-outlined">
+                        trending_up
+                    </span>Analytics
+                </li>
+                <li class="nav-item">
+                    <span class="material-symbols-outlined">
+                        settings
+                    </span>Settings
+                </li>
+            </ul>
+            <div class="sidebar-footer">
+                <div class="avatar-sm"><span class="material-symbols-outlined">
+                        person
+                    </span></div>
+                <div>
+                    <div class="name">Admin User</div>
+                    <div class="email">admin@product.com</div>
+                </div>
+            </div>
+        </aside>
+
+        <div class="main">
+            <div class="topbar">
+                <div>
+                    <h1>Dashboard</h1>
+                    <p>Manage and dashboard here</p>
+                </div>
+                <div class="topbar-actions">
+                    <div class="search">
+                        <span class="material-symbols-outlined">
+                            search
+                        </span>
+                        Search...
+                    </div>
+                    <div class="icon-btn">
+                        <span class="material-symbols-outlined">
+                            notifications
+                        </span>
+                        <span class="dot"></span>
+                    </div>
+                    <div class="profile-pill">
+                        <div class="avatar-round">A</div>
+                        <span class="material-symbols-outlined">
+                            keyboard_arrow_down
+                        </span>
+                    </div>
+                </div>
+            </div>
+
+            <section class="banner">
+                <div class="banner-top">
+                    <div>
+                        <h2>Welcome back, Admin <span class="date-pill">Wednesday, April 1, 2025</span></h2>
+                        <p class="sub">Here's your platform performance overview</p>
+                    </div>
+                    <div class="banner-actions">
+                        <button class="banner-btn">
+                            <span class="material-symbols-outlined">
+                                arrow_downward_alt
+                            </span>Export</button>
+                        <button class="banner-btn icon-only">
+                            <span class="material-symbols-outlined">
+                                refresh
+                            </span>
+                        </button>
+                    </div>
+                </div>
+
+                <div class="banner-stats">
+                    <div class="banner-stat">
+                        <div class="label"><span class="material-symbols-outlined">
+                                shopping_cart
+                            </span>Today's Orders</div>
+                        <div class="value">47</div>
+                        <div class="delta">+12% from yesterday</div>
+                    </div>
+                    <div class="banner-stat">
+                        <div class="label"> <span class="material-symbols-outlined">
+                                group
+                            </span>New Users</div>
+                        <div class="value">23</div>
+                        <div class="delta">+8% from yesterday</div>
+                    </div>
+                    <div class="banner-stat">
+                        <div class="label"><span class="material-symbols-outlined">
+                                attach_money
+                            </span>Revenue Today</div>
+                        <div class="value">PKR 84K</div>
+                        <div class="delta">+16% from yesterday</div>
+                    </div>
+                    <div class="banner-stat">
+                        <div class="label"> <span class="material-symbols-outlined">
+                                trending_up
+                            </span>Conversion Rate</div>
+                        <div class="value">3.24%</div>
+                        <div class="delta">+0.4% from yesterday</div>
+                    </div>
+                </div>
+            </section>
+
+            <section class="kpi-grid">
+                <div class="kpi-card">
+                    <div class="kpi-top">
+                        <div class="kpi-icon blue"><span class="material-symbols-outlined">
+                                group
+                            </span></div>
+                        <div class="kpi-delta"><span class="material-symbols-outlined">
+                                trending_up
+                            </span>+18.5%</div>
+                    </div>
+                    <div class="kpi-value">12,543</div>
+                    <div class="kpi-label">Total Users</div>
+                    <div class="kpi-progress-row"><span>Progress</span><b>75%</b></div>
+                    <div class="progress-track">
+                        <div class="progress-fill blue" style="width:75%"></div>
+                    </div>
+                    <div class="kpi-foot"><span>vs last month</span><b>11,986</b></div>
+                </div>
+
+                <div class="kpi-card">
+                    <div class="kpi-top">
+                        <div class="kpi-icon green"> <span class="material-symbols-outlined">
+                                deployed_code
+                            </span></div>
+                        <div class="kpi-delta"><span class="material-symbols-outlined">
+                                trending_up
+                            </span>+22.7%</div>
+                    </div>
+                    <div class="kpi-value">3,842</div>
+                    <div class="kpi-label">Total Products</div>
+                    <div class="kpi-progress-row"><span>Progress</span><b>62%</b></div>
+                    <div class="progress-track">
+                        <div class="progress-fill green" style="width:62%"></div>
+                    </div>
+                    <div class="kpi-foot"><span>vs last month</span><b>3,137</b></div>
+                </div>
+
+                <div class="kpi-card">
+                    <div class="kpi-top">
+                        <div class="kpi-icon orange"><span class="material-symbols-outlined">
+                                shopping_cart
+                            </span></div>
+                        <div class="kpi-delta"><span class="material-symbols-outlined">
+                                trending_up
+                            </span>+15.3%</div>
+                    </div>
+                    <div class="kpi-value">9,238</div>
+                    <div class="kpi-label">Total Orders</div>
+                    <div class="kpi-progress-row"><span>Progress</span><b>83%</b></div>
+                    <div class="progress-track">
+                        <div class="progress-fill orange" style="width:83%"></div>
+                    </div>
+                    <div class="kpi-foot"><span>vs last month</span><b>8,012</b></div>
+                </div>
+
+                <div class="kpi-card">
+                    <div class="kpi-top">
+                        <div class="kpi-icon purple"><span class="material-symbols-outlined">
+                                attach_money
+                            </span></div>
+                        <div class="kpi-delta"><span class="material-symbols-outlined">
+                                trending_up
+                            </span>+33.1%</div>
+                    </div>
+                    <div class="kpi-value">PKR 2.4M</div>
+                    <div class="kpi-label">Total Revenue</div>
+                    <div class="kpi-progress-row"><span>Progress</span><b>90%</b></div>
+                    <div class="progress-track">
+                        <div class="progress-fill purple" style="width:90%"></div>
+                    </div>
+                    <div class="kpi-foot"><span>vs last month</span><b>PKR 1.81M</b></div>
+                </div>
+            </section>
+
+            <section class="content-grid">
+                <div class="panel">
+                    <div class="panel-head">
+                        <div>
+                            <h3>Revenue Analytics</h3>
+                            <p>Comprehensive overview of performance metrics</p>
+                        </div>
+                        <div class="tabs">
+                            <div class="tab active">This Month</div>
+                            <div class="tab">This Year</div>
+                        </div>
+                    </div>
+
+                    <div class="rev-row">
+                        <div class="rev-row-head">
+                            <div><span class="month">January</span><span class="dates">• 1-31 dates</span></div>
+                            <div><span class="delta">+12.5%</span><span class="amt">PKR 120K</span></div>
+                        </div>
+                        <div class="rev-bar-track">
+                            <div class="rev-bar-fill" style="width:60%">60%</div>
+                        </div>
+                    </div>
+
+                    <div class="rev-row">
+                        <div class="rev-row-head">
+                            <div><span class="month">February</span><span class="dates">• 1-28 dates</span></div>
+                            <div><span class="delta">+22.3%</span><span class="amt">PKR 220K</span></div>
+                        </div>
+                        <div class="rev-bar-track">
+                            <div class="rev-bar-fill" style="width:75%">75%</div>
+                        </div>
+                    </div>
+
+                    <div class="rev-row">
+                        <div class="rev-row-head">
+                            <div><span class="month">March</span><span class="dates">• 1-31 dates</span></div>
+                            <div><span class="delta">+18.7%</span><span class="amt">PKR 240K</span></div>
+                        </div>
+                        <div class="rev-bar-track">
+                            <div class="rev-bar-fill" style="width:80%">80%</div>
+                        </div>
+                    </div>
+
+                    <div class="rev-summary">
+                        <div class="rev-summary-card">
+                            <div class="top">
+                                <div class="ic" style="background:#e8f0ff;color:#2563c9;"><span
+                                        class="material-symbols-outlined">
+                                        attach_money
+                                    </span></div>
+                            </div>
+                            <div class="val">PKR 640K</div>
+                            <div class="lab">Total Revenue</div>
+                        </div>
+                        <div class="rev-summary-card">
+                            <div class="top">
+                                <div class="ic" style="background:#dcfce7;color:#16a34a;"><span
+                                        class="material-symbols-outlined">
+                                        trending_up
+                                    </span></div>
+                            </div>
+                            <div class="val">+18.5%</div>
+                            <div class="lab">Growth Rate</div>
+                        </div>
+                        <div class="rev-summary-card">
+                            <div class="top">
+                                <div class="ic" style="background:#ede9fe;color:#7c3aed;"><span
+                                        class="material-symbols-outlined">
+                                        group
+                                    </span></div>
+                            </div>
+                            <div class="val">PKR 213K</div>
+                            <div class="lab">Avg. Order</div>
+                        </div>
+                        <div class="rev-summary-card">
+                            <div class="top">
+                                <div class="ic" style="background:#ffedd5;color:#f5820a;"><span
+                                        class="material-symbols-outlined">
+                                        shopping_cart
+                                    </span></div>
+                            </div>
+                            <div class="val">3,022</div>
+                            <div class="lab">Total Orders</div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="panel">
+                    <div class="panel-head">
+                        <div>
+                            <h3>Live Activity</h3>
+                            <p>Real-time updates</p>
+                        </div>
+                        <div class="live-badge"><span class="live-dot"></span>Live</div>
+                    </div>
+                    <div class="activity-list">
+                        <div class="activity-item">
+                            <div class="activity-ic" style="background:#e8f0ff;color:#2563c9;"><span
+                                    class="material-symbols-outlined">
+                                    shopping_cart
+                                </span></div>
+                            <div>
+                                <div class="activity-text"><b>Ahmad Sherif</b> placed a new order<br><span
+                                        class="amt">PKR 4,560</span>
+                                </div>
+                                <div class="activity-time">2 minutes ago</div>
+                            </div>
+                        </div>
+                        <div class="activity-item">
+                            <div class="activity-ic" style="background:#eef1f6;color:#6b7280;"><span
+                                    class="material-symbols-outlined">
+                                    person
+                                </span></div>
+                            <div>
+                                <div class="activity-text"><b>Fatima Nazari</b> registered as a seller</div>
+                                <div class="activity-time">8 minutes ago</div>
+                            </div>
+                        </div>
+                        <div class="activity-item">
+                            <div class="activity-ic" style="background:#ede9fe;color:#7c3aed;"><span
+                                    class="material-symbols-outlined">
+                                    deployed_code
+                                </span></div>
+                            <div>
+                                <div class="activity-text"><b>Hamid Karimi</b> added a new product listing</div>
+                                <div class="activity-time">15 minutes ago</div>
+                            </div>
+                        </div>
+                        <div class="activity-item">
+                            <div class="activity-ic" style="background:#dcfce7;color:#f5820a;"><span
+                                    class="material-symbols-outlined">
+                                    star
+                                </span></div>
+                            <div>
+                                <div class="activity-text"><b>Zain Ahmadi</b> left a 5-star review</div>
+                                <div class="activity-time">1 hour ago</div>
+                            </div>
+                        </div>
+                    </div>
+                    <a class="view-all-link" href="#">View All Activities</a>
+                </div>
+            </section>
+
+            <section class="content-grid">
+                <div class="panel">
+                    <div class="section-title-row">
+                        <div>
+                            <h3>Quick Actions</h3>
+                            <p>Frequently used admin tasks</p>
+                        </div>
+                    </div>
+                    <div class="qa-grid">
+                        <button class="qa-btn qa-blue">
+                            <span class="material-symbols-outlined">
+                                add_circle
+                            </span>
+                            <span class="t">Add Product</span>
+                            <span class="s">Create new listing</span>
+                        </button>
+                        <button class="qa-btn qa-green">
+                            <span class="material-symbols-outlined">
+                                group
+                            </span>
+                            <span class="t">Manage Users</span>
+                            <span class="s">View and edit users</span>
+                        </button>
+                        <button class="qa-btn qa-orange">
+                            <span class="material-symbols-outlined">
+                                trending_up
+                            </span>
+                            <span class="t">View Reports</span>
+                            <span class="s">Analytics data</span>
+                        </button>
+                        <button class="qa-btn qa-purple">
+                            <span class="material-symbols-outlined">
+                                settings
+                            </span>
+                            <span class="t">Settings</span>
+                            <span class="s">Configure system</span>
+                        </button>
+                    </div>
+                </div>
+
+                <div class="panel">
+                    <div class="section-title-row">
+                        <div>
+                            <h3>Top Sellers</h3>
+                            <p>Best performing products</p>
+                        </div>
+                        <span class="view-all-tag">View All <span class="material-symbols-outlined">
+                                chevron_right
+                            </span></span>
+                    </div>
+
+                    <div class="seller-row">
+                        <div class="seller-left">
+                            <div class="seller-badge" style="background:#f5820a;">KH</div>
+                            <div>
+                                <div class="seller-name">Kabul Handicrafts</div>
+                                <div class="seller-sub">1,245 orders • <span class="g">+24.5%</span></div>
+                            </div>
+                        </div>
+                        <div class="seller-right">
+                            <div class="seller-rev">PKR 245K</div>
+                            <div class="seller-rev-lab">Revenue</div>
+                        </div>
+                    </div>
+
+                    <div class="seller-row">
+                        <div class="seller-left">
+                            <div class="seller-badge" style="background:#3a4657;">AC</div>
+                            <div>
+                                <div class="seller-name">Afghan Carpets Co.</div>
+                                <div class="seller-sub">876 orders • <span class="g">+18.2%</span></div>
+                            </div>
+                        </div>
+                        <div class="seller-right">
+                            <div class="seller-rev">PKR 198K</div>
+                            <div class="seller-rev-lab">Revenue</div>
+                        </div>
+                    </div>
+
+                    <div class="seller-row">
+                        <div class="seller-left">
+                            <div class="seller-badge" style="background:#e0742a;">HT</div>
+                            <div>
+                                <div class="seller-name">Herat Textiles</div>
+                                <div class="seller-sub">634 orders • <span class="g">+15.7%</span></div>
+                            </div>
+                        </div>
+                        <div class="seller-right">
+                            <div class="seller-rev">PKR 167K</div>
+                            <div class="seller-rev-lab">Revenue</div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <section class="panel">
+                <div class="section-title-row">
+                    <div>
+                        <h3>Pending Actions</h3>
+                        <p>Items requiring your immediate attention</p>
+                    </div>
+                    <span class="pending-flag"><span class="material-symbols-outlined">
+                            star_rate
+                        </span> 25 Pending</span>
+                </div>
+
+                <div class="pending-grid">
+                    <div class="pending-card orange">
+                        <div class="pending-top">
+                            <div class="pending-ic" style="background:#f5820a;"><span class="material-symbols-outlined">
+                                    person
+                                </span></div>
+                            <div class="pending-count" style="background:#f5820a;">12</div>
+                        </div>
+                        <div class="pending-title">Seller Verifications</div>
+                        <div class="pending-desc">New sellers waiting for approval and verification</div>
+                        <button class="pending-btn" style="background:#f5820a;">Review Now <span
+                                class="material-symbols-outlined">
+                                chevron_right
+                            </span></button>
+                    </div>
+
+                    <div class="pending-card blue">
+                        <div class="pending-top">
+                            <div class="pending-ic" style="background:#2563c9;"> <span
+                                    class="material-symbols-outlined">
+                                    deployed_code
+                                </span></div>
+                            <div class="pending-count" style="background:#2563c9;">8</div>
+                        </div>
+                        <div class="pending-title">Product Approvals</div>
+                        <div class="pending-desc">New products listings pending review</div>
+                        <button class="pending-btn" style="background:#2563c9;">Review Now <span
+                                class="material-symbols-outlined">
+                                chevron_right
+                            </span></button>
+                    </div>
+
+                    <div class="pending-card red">
+                        <div class="pending-top">
+                            <div class="pending-ic" style="background:#dc2626;"><span class="material-symbols-outlined">
+                                    report
+                                </span></div>
+                            <div class="pending-count" style="background:#dc2626;">5</div>
+                        </div>
+                        <div class="pending-title">Reported Issues</div>
+                        <div class="pending-desc">Urgent complaints and flagged content</div>
+                        <button class="pending-btn" style="background:#dc2626;">View Issues <span
+                                class="material-symbols-outlined">
+                                chevron_right
+                            </span></button>
+                    </div>
+                </div>
+            </section>
+        </div>
+</body>
+
+</html>
