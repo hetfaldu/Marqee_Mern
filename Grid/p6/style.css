@@ -211,23 +211,47 @@ body {
 }
 
 .banner {
-  background: linear-gradient(120deg, #0b2f5e, #1a4a8a);
   border-radius: 18px;
   padding: 26px 28px;
   color: #fff;
   margin-bottom: 20px;
   box-shadow: 0 4px 14px rgba(16, 24, 40, 0.08);
-  animation: photo 2s ease-in-out infinite;
+  animation: photo 6s linear infinite;
+  background: linear-gradient(120deg, #0b2f5e, #f5820a, #0b2f5e);
+
+  background-size: 1000% 400%;
 }
 
 @keyframes photo {
+  0% {
+    background-position: 0% 50%;
+  }
+
+  25% {
+    background-position: 50% 100%;
+  }
+
+  50% {
+    background-position: 100% 50%;
+  }
+
+  75% {
+    background-position: 100% 50%;
+  }
+
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+/* @keyframes photo {
   0% {
     background: linear-gradient(120deg, #0b2f5e, #f5820a, #0b2f5e);
   }
   100% {
     background: linear-gradient(120deg, #f5820a, #0b2f5e, #f5820a);
   }
-}
+} */
 
 .banner-top {
   display: flex;
