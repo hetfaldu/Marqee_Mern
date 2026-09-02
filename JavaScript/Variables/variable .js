@@ -900,6 +900,9 @@ student2.displayDetails();
 //2. Defining Properties: You can define properties for the object instance using this.propertyName = value syntax inside the constructor function.
 //3. Defining Methods: You can define methods for the object instance using this.methodName = function() { ... } syntax inside the constructor function or by adding methods to the prototype property of the constructor function.
 
+//constructor function in JavaScript
+//A constructor function in JavaScript is a special type of function that is used to create and initialize objects. It is typically defined with a capitalized name and is called using the new keyword. When a constructor function is invoked, it creates a new object, sets the this context to that object, and allows you to define properties and methods for that object. Constructor functions have a prototype property that allows you to define methods and properties that will be shared among all instances created by the constructor. They provide a way to create multiple instances of similar objects with shared behavior and properties.
+
 //Create a BankAccount constructor with accountHolder, accountNumber, and balance. Add deposit() and withdraw(), interest(percent) methods
 
 function BankAccount(name, accNumber,balance=0){
