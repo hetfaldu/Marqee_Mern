@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI Nexus | Login & Sign Up</title>
+    <style>
+        :root {
+            --primary: #4285f4;
+            --secondary: #9b51e0;
+            --bg-dark: #0f172a;
+            --glass: rgba(255, 255, 255, 0.95);
+        }
+
+        * { box-sizing: border-box; }
+
+        body {
+            background: var(--bg-dark);
+            background-image: 
+                radial-gradient(circle at 20% 30%, rgba(66, 133, 244, 0.15) 0%, transparent 40%),
+                radial-gradient(circle at 80% 70%, rgba(155, 81, 224, 0.15) 0%, transparent 40%);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            height: 100vh;
+            margin: 0;
+            overflow: hidden;
+        }
+
+        h1 { font-weight: bold; margin: 0; font-size: 24px; color: #1f2937; }
+        p { font-size: 14px; font-weight: 100; line-height: 20px; letter-spacing: 0.5px; margin: 20px 0 30px; color: #4b5563; }
+        span { font-size: 12px; color: #9ca3af; margin-bottom: 15px; }
+        a { color: #333; font-size: 14px; text-decoration: none; margin: 15px 0; border-bottom: 1px solid transparent; transition: 0.3s; }
+        a:hover { border-color: var(--primary); color: var(--primary); }
+
+        /* MAIN CONTAINER */
+        .container {
+            background-color: var(--glass);
+            border-radius: 20px;
+            box-shadow: 0 24px 48px rgba(0,0,0,0.3);
+            position: relative;
+            overflow: hidden;
+            width: 850px;
+            max-width: 100%;
+            min-height: 550px;
+        }
+
+        .form-container {
+            position: absolute;
+            top: 0;
+            height: 100%;
+            transition: all 0.6s ease-in-out;
+        }
+
+        .sign-in-container { left: 0; width: 50%; z-index: 2; }
+        .sign-up-container { left: 0; width: 50%; opacity: 0; z-index: 1; }
+
+        /* ANIMATION LOGIC */
+        .container.right-panel-active .sign-in-container { transform: translateX(100%); opacity: 0; }
+        .container.right-panel-active .sign-up-container { transform: translateX(100%); opacity: 1; z-index: 5; animation: show 0.6s; }
+
+        @keyframes show {
+            0%, 49.99% { opacity: 0; z-index: 1; }
+            50%, 100% { opacity: 1; z-index: 5; }
+        }
+
+        form {
+            background-color: #ffffff;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-direction: column;
+            padding: 0 50px;
+            height: 100%;
+            text-align: center;
+        }
+
+        input {
+            background-color: #f3f4f6;
+            border: 1px solid #e5e7eb;
+            padding: 12px 15px;
+            margin: 8px 0;
+            width: 100%;
+            border-radius: 10px;
+            outline: none;
+            transition: 0.3s;
+        }
+        input:focus { border-color: var(--primary); background-color: #fff; box-shadow: 0 0 0 4px rgba(66, 133, 244, 0.1); }
+
+        /* THE AI BUTTON STYLE */
+        .btn-wrapper { position: relative; margin-top: 20px; }
+        .glow {
+            position: absolute; inset: -2px; border-radius: 50px;
+            background: conic-gradient(from 180deg, #4285f4, #ea4335, #fbbc05, #34a853, #4285f4);
+            filter: blur(10px); opacity: 0; transition: 0.4s; z-index: 1;
+        }
+        .btn-wrapper:hover .glow { opacity: 0.7; }
+        
+        button {
+            position: relative; z-index: 2;
+            border-radius: 50px; border: none;
+            background-color: #1f2937; color: #ffffff;
+            font-size: 12px; font-weight: bold;
+            padding: 12px 45px; letter-spacing: 1px;
+            text-transform: uppercase; cursor: pointer;
+            transition: transform 80ms ease-in;
+        }
+        button:active { transform: scale(0.95); }
+        button.ghost { background-color: transparent; border: 2px solid #ffffff; }
+
+        /* OVERLAY SLIDER */
+        .overlay-container {
+            position: absolute; top: 0; left: 50%; width: 50%; height: 100%;
+            overflow: hidden; transition: transform 0.6s ease-in-out; z-index: 100;
+        }
+        .container.right-panel-active .overlay-container { transform: translateX(-100%); }
+
+        .overlay {
+            background: linear-gradient(135deg, #1e293b 0%, #0f172a 100%);
+            background-repeat: no-repeat; background-size: cover;
+            color: #ffffff; position: relative; left: -100%;
+            height: 100%; width: 200%;
+            transform: translateX(0); transition: transform 0.6s ease-in-out;
+        }
+        .container.right-panel-active .overlay { transform: translateX(50%); }
+
+        .overlay-panel {
+            position: absolute; display: flex; align-items: center; justify-content: center;
+            flex-direction: column; padding: 0 40px; text-align: center;
+            top: 0; height: 100%; width: 50%;
+            transform: translateX(0); transition: transform 0.6s ease-in-out;
+        }
+        .overlay-left { transform: translateX(-20%); }
+        .container.right-panel-active .overlay-left { transform: translateX(0); }
+        .overlay-right { right: 0; transform: translateX(0); }
+        .container.right-panel-active .overlay-right { transform: translateX(20%); }
+
+        .overlay h1 { color: white; }
+        .overlay p { color: #cbd5e1; }
+
+        /* Social Icons */
+        .social-container { margin: 20px 0; }
+        .social-container a {
+            border: 1px solid #ddd; border-radius: 50%;
+            display: inline-flex; justify-content: center; align-items: center;
+            margin: 0 5px; height: 40px; width: 40px; transition: 0.3s;
+        }
+        .social-container a:hover { background-color: #f3f4f6; transform: translateY(-3px); }
+    </style>
+</head>
+<body>
+
+    <div class="container" id="container">
+        <!-- SIGN UP FORM -->
+        <div class="form-container sign-up-container">
+            <form action="#">
+                <h1>Create Account</h1>
+                <div class="social-container">
+                    <a href="#">G</a>
+                    <a href="#">F</a>
+                    <a href="#">L</a>
+                </div>
+                <span>or use your email for registration</span>
+                <input type="text" placeholder="Name" />
+                <input type="email" placeholder="Email" />
+                <input type="password" placeholder="Password" />
+                <div class="btn-wrapper">
+                    <div class="glow"></div>
+                    <button>Sign Up</button>
+                </div>
+            </form>
+        </div>
+
+        <!-- SIGN IN FORM -->
+        <div class="form-container sign-in-container">
+            <form action="#">
+                <h1>Sign in to AI Nexus</h1>
+                <div class="social-container">
+                    <a href="#">G</a>
+                    <a href="#">F</a>
+                    <a href="#">L</a>
+                </div>
+                <span>or use your account</span>
+                <input type="email" placeholder="Email" />
+                <input type="password" placeholder="Password" />
+                <a href="#">Forgot your password?</a>
+                <div class="btn-wrapper">
+                    <div class="glow"></div>
+                    <button>Sign In</button>
+                </div>
+            </form>
+        </div>
+
+        <!-- OVERLAY PANELS -->
+        <div class="overlay-container">
+            <div class="overlay">
+                <div class="overlay-panel overlay-left">
+                    <h1>Welcome Back!</h1>
+                    <p>To keep connected with us please login with your personal info</p>
+                    <button class="ghost" id="signIn">Sign In</button>
+                </div>
+                <div class="overlay-panel overlay-right">
+                    <h1>Hello, Friend!</h1>
+                    <p>Enter your personal details and start your journey with AI Mode</p>
+                    <button class="ghost" id="signUp">Sign Up</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        const signUpButton = document.getElementById('signUp');
+        const signInButton = document.getElementById('signIn');
+        const container = document.getElementById('container');
+
+        signUpButton.addEventListener('click', () => {
+            container.classList.add("right-panel-active");
+        });
+
+        signInButton.addEventListener('click', () => {
+            container.classList.remove("right-panel-active");
+        });
+    </script>
+</body>
+</html>
